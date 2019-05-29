@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href = "{% static "css/home.css" %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900|Quicksand|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Super Mario Returns| Home</title>
+  </head>
+  <body>
+    <div class="block1">
+      <div class="topnav">
+        <img src="{% static "images/logo.png" %}" alt="logo" class="logo" width=250px>
+        <ul>
+          {% url 'main' as the_url %}
+          <a href="{{the_url}}"><li>HOME</li></a>
+          {% url 'review' as the_url %}
+          <a href="{{the_url}}"><li>REVIEWS</li></a>
+          {% url 'contact' as the_url %}
+          <a href="{{the_url}}"><li>CONTACT US</li></a>
+        </ul>
+      </div>
+      <img src="{% static "images/cover.png" %}" alt="cover" class="cover">
+      <div class="wrapper">
+        <h1>SUPER MARIO RETURNS</h1>
+        <p>Let's take you backto the  90's when games were cool <br>The most loved character Mario is the hero of  Mushroom kingdom,  <br>he works with his friends to keep the kingdom safe  </p>
+        <img src="{% static "images/playstore.png" %}">
+        <img src="{% static "images/appstore.png" %}">
+      </div>
+    </div>
+    <div class="block2">
+      <div class="review_container">
+        <div class="review">
+          <p>This Game is a Masterpiece</p>
+          <h6>-GiantBomb</h6>
+        </div>
+        <div class="review">
+          <p>Mario takes me back to when I was 10 years old. It is as close to perfect as a game can get</p>
+          <h6>-Joystiq</h6>
+        </div>
+        <div class="review">
+          <p>There is a reason why no franchise is as successful as Mario</p>
+          <h6>-IGN</h6>
+        </div>
+      </div>
+    </div>
+    <div class="block3">
+      <p>RELIVE YOUR <span class="red"> MEMORIES </span></p>
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/ia8bhFoqkVE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="block4">
+      <p>Stay up to date! <br>Subscribe to our Newsletter</p>
+      <div class="mail">
+        <form method="post">
+          {{formvar.as_p}}
+          {% csrf_token %}
+          <input type="submit" value="SUBSCRIBE">
+        </form>
+      </div>
+    </div>
+    <div class="block5">
+        <p>Copyright© Nintendo 2018-19 All Rights Reserved</p>
+        <h2>Follow us on</h2>
+        <div class="icons">
+          <a href="http://www.fb.com" class="fa fa-facebook"></a>
+          <a href="http://www.twitter.com" class="fa fa-twitter"></a>
+          <a href="http://www.instagram.com" class="fa fa-instagram"></a>
+          <a href="http://www.linkedin.com" class="fa fa-linkedin"></a>
+          <a href="http://www.tumblr.com" class="fa fa-tumblr"></a>
+        </div>
+
+    </div>
+  </body>
+</html>

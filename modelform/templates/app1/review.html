@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Super Mario Returns| Reviews</title>
+    <link rel="stylesheet" href = "{% static "css/review.css" %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900|Quicksand|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+    <div class="topnav">
+      <img src="{% static "images/logo2.png" %}" alt="logo" class="logo" width=200px>
+      <ul>
+        {% url 'main' as the_url %}
+        <a href="{{the_url}}"><li>HOME</li></a>
+        {% url 'review' as the_url %}
+        <a href="{{the_url}}"><li>REVIEWS</li></a>
+        {% url 'contact' as the_url %}
+        <a href="{{the_url}}"><li>CONTACT US</li></a>
+      </ul>
+    </div>
+      <p class="counter">showing {{ count }} reviews</p>
+      <div class='chatbox'>
+        {% if comments %}
+
+          {% for com in comments %}
+          <div class="message">
+              <div class="namedate">
+                <i class="material-icons">account_circle</i>
+                <p class="name">{{ com.person }}|</p>
+                <p class="date">{{ com.date }}</p>
+              </div>
+              <a class="email" href="mailto:{{com.email}}">{{ com.email }}</a>
+              <p class="comment">{{ com.comment }}</p>
+          </div>
+          {% endfor %}
+        {% else %}
+        <p class="empty">(No Reviews yet! Lets post one maybe? =D)</p>
+        {% endif %}
+      </div>
+    <div class="sender">
+      <p>Played the game? post a review and let us know!</p>
+      <form method="post">
+        {{formvar.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="post">
+      </form>
+    </div>
+    <div class="block5">
+        <p>Copyright© Nintendo 2018-19 All Rights Reserved</p>
+        <h2>Follow us on</h2>
+        <div class="icons">
+          <a href="http://www.fb.com" class="fa fa-facebook"></a>
+          <a href="http://www.twitter.com" class="fa fa-twitter"></a>
+          <a href="http://www.instagram.com" class="fa fa-instagram"></a>
+          <a href="http://www.linkedin.com" class="fa fa-linkedin"></a>
+          <a href="http://www.tumblr.com" class="fa fa-tumblr"></a>
+        </div>
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,141 @@
+*{
+  font-family: 'Roboto';
+  margin: 0px;
+  padding: 0px;
+}
+*::selection{
+  background-color: #FF3939;
+  color: #FFFFFF;
+}
+.topnav{
+  position: relative;
+  height: 90px;
+  background-color: #FF3636;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.logo{
+  position: absolute;
+  top: 10px;
+
+}
+.topnav ul{
+  position:absolute;
+  right: 0px;
+}
+.topnav ul a{
+  text-decoration: none;
+}
+.topnav ul a li{
+  transition: all 0.1s;
+  padding: 35px 25px;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  display: inline-block;
+}
+.topnav ul a li:hover{
+  background-color: #DD3636;
+
+}
+
+label{
+  display: block;
+  color: Black;
+  font-family: 'Quicksand';
+  font-size: 20px;
+  margin: 4px;
+  font-weight: bold;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: 'Quicksand';
+    font-size: 20px;
+}
+
+input[type=text], select, textarea:focus{
+  outline-color: #FF3636;
+}
+input[type=submit] {
+  cursor: pointer;
+  color: white;
+  background-color: #FF3939;
+  border: none;
+  padding: 10px 50px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ;
+}
+
+input[type=submit]:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+.form{
+  width: 70%;
+  margin: 30px auto ;
+  box-sizing: border-box;
+  padding: 35px;
+}
+
+
+
+
+
+.block5{
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color:#222222;
+  background: url("/static/images/bg1.jpg");
+  background-size: 50px 50px;
+  background-repeat: x;
+  background-attachment: fixed;
+}
+.block5 p{
+  color: white;
+  text-align: center;
+  font-size: 17px;
+  font-family: 'Quicksand';
+  padding: 30px;
+}
+.block5 h2{
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Roboto';
+  padding: 5px;
+}
+a{
+  text-decoration: none;
+}
+.icons{
+  text-align: center;
+  font-size: 25px;
+}
+.icons a{
+  transition: all 0.5s;
+  color: white;
+  padding: 2px;
+}
+.icons a:hover{
+  color: #FF3939;
+}

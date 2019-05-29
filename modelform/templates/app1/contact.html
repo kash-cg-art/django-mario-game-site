@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Super Mario Returns| Contact Us</title>
+    <link rel="stylesheet" href = "{% static "css/contact.css" %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900|Quicksand|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+    <div class="topnav">
+      <img src="{% static "images/logo2.png" %}" alt="logo" class="logo" width=200px>
+      <ul>
+        {% url 'main' as the_url %}
+        <a href="{{the_url}}"><li>HOME</li></a>
+        {% url 'review' as the_url %}
+        <a href="{{the_url}}"><li>REVIEWS</li></a>
+        {% url 'contact' as the_url %}
+        <a href="{{the_url}}"><li>CONTACT US</li></a>
+      </ul>
+    </div>
+    <div class="form">
+      <form action="mailto:help@nintendo.com">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="Email">Email</label>
+        <input type="text" id="Email" name="Email" placeholder="Your Email">
+
+        <label for="continent">Continent</label>
+        <select id="continent" name="Continent">
+          <option value="Asia">Asia</option>
+          <option value="America">America</option>
+          <option value="Africa">Africa</option>
+          <option value="Australia">Australia</option>
+          <option value="Europe">Europe</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+    <div class="block5">
+      <p>Copyright© Nintendo 2018-19 All Rights Reserved</p>
+      <h2>Follow us on</h2>
+      <div class="icons">
+        <a href="http://www.fb.com" class="fa fa-facebook"></a>
+        <a href="http://www.twitter.com" class="fa fa-twitter"></a>
+        <a href="http://www.instagram.com" class="fa fa-instagram"></a>
+        <a href="http://www.linkedin.com" class="fa fa-linkedin"></a>
+        <a href="http://www.tumblr.com" class="fa fa-tumblr"></a>
+      </div>
+    </div>
+  </body>
+</html>
